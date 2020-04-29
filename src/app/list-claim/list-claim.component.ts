@@ -8,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 export class ListClaimComponent implements OnInit {
   cars: any[];
   constructor() {
-    this.cars=[];
+    this.cars = [];
     this.cars.push({vin: 'stm933', color: 'black', year: 2011, brand: 'Renault'});
   }
 
