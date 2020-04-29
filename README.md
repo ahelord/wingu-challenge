@@ -1,6 +1,17 @@
 # WinguChallenge
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
+#Run docker
+- run ./run-docker.sh
+- go to http://localhost:4201
+# Run Local
+
+## Node 
+Version v12.16.3
+
+## NPM
+
+Version 6.14.4
 
 ## Development server
 
