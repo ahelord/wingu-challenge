@@ -1,0 +1,35 @@
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-12">
+      <p-button label="Crear reclamo" (click)="goToCreateClaim()"></p-button>
+
+    </div>
+    <div class="ui-g-12">
+
+      <p-table styleClass="ui-table-customers" [value]="claims">
+        <ng-template pTemplate="header">
+          <tr>
+            <th>Título</th>
+            <th>Descripción</th>
+            <th>Foto</th>
+            <th>Comuna</th>
+          </tr>
+        </ng-template>
+        <ng-template pTemplate="body" let-claim>
+          <tr>
+            <td>{{claim.title}}</td>
+            <td>{{claim.description}}</td>
+            <td>
+              <img src="{{claim.imageUrl}}">
+            </td>
+            <td>{{claim.communeName}}</td>
+          </tr>
+        </ng-template>
+      </p-table>
+
+
+    </div>
+  </div>
+</div>
+
+

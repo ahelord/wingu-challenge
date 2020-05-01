@@ -1,0 +1,43 @@
+<div class="ui-fluid">
+  <div class="ui-g">
+    <div class="ui-g-8">
+
+     <div>
+       <span>Título</span>
+       <input type="text" pInputText [(ngModel)]="claim.title"/>
+     </div>
+
+      <div>
+        <span>Descripción</span>
+        <textarea pInputTextarea [(ngModel)]="claim.description"></textarea>
+      </div>
+
+      <div>
+        <span>Imagen url (WIP)</span>
+        <input type="text" pInputText [(ngModel)]="claim.imageUrl"/>
+      </div>
+
+      <div>
+        <p-dropdown [options]="communes" [(ngModel)]="commune" placeholder="Seleccione la comuna"
+                    optionLabel="name" [showClear]="true"></p-dropdown>
+      </div>
+
+      <div>
+        <p-button label="Crear reclamo" (click)="createClaim(claim)"></p-button>
+      </div>
+
+      <div>
+        <p-button label="Ver reclamos" (click)="goToClaims()" class="ui-button-success"></p-button>
+      </div>
+
+      <div *ngIf="isSuccess">
+        <p-message severity="success" text="Reclamo guardado"></p-message>
+      </div>
+      <div *ngIf="isMissingField">
+        <p-message severity="error" text="Faltan campos"></p-message>
+      </div>
+
+
+    </div>
+  </div>
+</div>

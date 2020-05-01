@@ -3,7 +3,15 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  firebaseConfig : {
+    apiKey: 'AIzaSyBqnh_tynAqrFinTz_td3Dprco39qKYTRk',
+    authDomain: 'wingu-challenge.firebaseapp.com',
+    databaseURL: 'https://wingu-challenge.firebaseio.com',
+    projectId: 'wingu-challenge',
+    storageBucket: 'wingu-challenge.appspot.com',
+    messagingSenderId: '503321018053'
+  }
 };
 
 /*
