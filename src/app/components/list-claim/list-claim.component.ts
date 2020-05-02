@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import {Component, OnInit} from '@angular/core';
+import {Router, ActivatedRoute} from '@angular/router';
 import {ClaimService} from '../../shared/services/claim.service';
 import {Claim} from '../../shared/models/claim.model';
 
@@ -9,13 +9,12 @@ import {Claim} from '../../shared/models/claim.model';
   styleUrls: ['./list-claim.component.css']
 })
 export class ListClaimComponent implements OnInit {
-  cars: any[];
   claims: Claim[];
+
   constructor(private route: ActivatedRoute,
               private router: Router,
               private claimService: ClaimService) {
-    this.cars = [];
-    this.cars.push({vin: 'stm933', color: 'black', year: 2011, brand: 'Renault'});
+
     this.claimService.getClaims()
       .subscribe((claimsSnapshot) => {
         this.claims = [];

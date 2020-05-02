@@ -2,38 +2,54 @@
   <div class="ui-g">
     <div class="ui-g-8">
 
-     <div>
-       <span>Título</span>
-       <input type="text" pInputText [(ngModel)]="claim.title"/>
-     </div>
+      <div class="ui-g-8">
+        <span class="ui-widget">Título</span>
+        <input type="text" pInputText [(ngModel)]="claim.title"/>
+      </div>
 
-      <div>
-        <span>Descripción</span>
+      <div class="ui-g-8">
+        <span class="ui-widget" class="ui-widget">Descripción</span>
         <textarea pInputTextarea [(ngModel)]="claim.description"></textarea>
       </div>
 
-      <div>
-        <span>Imagen url (WIP)</span>
-        <input type="text" pInputText [(ngModel)]="claim.imageUrl"/>
+      <div class="ui-g-8">
+        <div class="ui-g-8">
+          <span class="ui-widget">Foto</span>
+        </div>
+
+        <div class="ui-g-8">
+          <img *ngIf="claim.imageUrl" class="image" src="{{claim.imageUrl}}">
+        </div>
+
+        <div class="ui-g-8">
+          <p-fileUpload chooseLabel="Subir foto" mode="basic" name="demo[]" accept="image/*"
+                        maxFileSize="1000000"
+                        [auto]="true"
+                        customUpload="true"
+                        (uploadHandler)="onUpload($event)">
+
+          </p-fileUpload>
+        </div>
+
       </div>
 
-      <div>
-        <p-dropdown [options]="communes" [(ngModel)]="commune" placeholder="Seleccione la comuna"
+      <div class="ui-g-8">
+        <span class="ui-widget">Comuna</span>
+        <p-dropdown [options]="communes" [(ngModel)]="commune" (onChange)="onChangeComune($event)"
+                    placeholder="Seleccione la comuna"
                     optionLabel="name" [showClear]="true"></p-dropdown>
       </div>
 
-      <div>
-        <p-button label="Crear reclamo" (click)="createClaim(claim)"></p-button>
+      <div class="ui-g-8">
+        <p-button class="ui-g-4" label="Crear reclamo" (click)="createClaim(claim)"></p-button>
+        <p-button class="ui-g-4" label="Ver reclamos" (click)="goToClaims()"></p-button>
       </div>
 
-      <div>
-        <p-button label="Ver reclamos" (click)="goToClaims()" class="ui-button-success"></p-button>
-      </div>
 
-      <div *ngIf="isSuccess">
+      <div class="ui-g-8" *ngIf="isSuccess">
         <p-message severity="success" text="Reclamo guardado"></p-message>
       </div>
-      <div *ngIf="isMissingField">
+      <div class="ui-g-8" *ngIf="isMissingField">
         <p-message severity="error" text="Faltan campos"></p-message>
       </div>
 

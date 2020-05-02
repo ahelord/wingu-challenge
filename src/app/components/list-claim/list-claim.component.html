@@ -4,7 +4,7 @@
       <p-button label="Crear reclamo" (click)="goToCreateClaim()"></p-button>
 
     </div>
-    <div class="ui-g-12">
+    <div class="ui-g-10">
 
       <p-table styleClass="ui-table-customers" [value]="claims">
         <ng-template pTemplate="header">
@@ -20,7 +20,7 @@
             <td>{{claim.title}}</td>
             <td>{{claim.description}}</td>
             <td>
-              <img src="{{claim.imageUrl}}">
+              <img class="image" src="{{claim.imageUrl}}">
             </td>
             <td>{{claim.communeName}}</td>
           </tr>
