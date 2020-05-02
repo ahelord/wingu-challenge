@@ -2,7 +2,7 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 9.1.3.
 
-#Run docker
+## Run docker
 - run `./run-docker.sh`
 - go to `http://localhost:4201`
 
